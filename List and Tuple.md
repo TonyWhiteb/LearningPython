@@ -39,4 +39,26 @@ The elements in a list could be __different__ data type
 
 ```Python
 >>> L = ['Apple', 123, True]
+>>> s = ['python', 'java', ['asp', 'php'], 'scheme']
+>>> len(s)
+4
 ```
+# Tuple
+
+Tuple is similar to list, but the only difference is that tuple __cannot be changed__!
+
+Define one element Tuple
+```Python
+>>> t = (1,)
+>>> t
+(1,)
+```
+"changeable" Tuple
+```Python
+>>> t = ('a', 'b', ['A', 'B'])
+>>> t[2][0] = 'X'
+>>> t[2][1] = 'Y'
+>>> t
+('a', 'b', ['X', 'Y'])
+```
+The __list__ in the tuple could be changed.

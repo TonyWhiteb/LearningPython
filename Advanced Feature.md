@@ -35,3 +35,16 @@ True
 >>> isinstance(123, Iterable)
 False
 ```
+
+## enumerate()
+
+return the index and the elements
+
+```python
+>>> for i, value in enumerate(['A', 'B', 'C']):
+...     print(i, value)
+...
+0 A
+1 B
+2 C
+```

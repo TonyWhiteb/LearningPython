@@ -60,3 +60,66 @@ based on key
 >>> sorted([36, 5, -12, 9, -21], key=abs)
 [5, 9, -12, -21, 36]
 ```
+
+#__Return Function__
+
+## Closure
+
+## lambda function
+
+lambda function only can have one expression, and do not need to write return.
+
+## Decorator
+
+dynamically add function during running the code.
+
+call a function and return a function.
+
+```Python
+def log(func):
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args, **kw)
+    return wrapper
+```
+```Python
+@log
+def now():
+    print('2015-3-25')
+```
+result:
+```Python
+>>> now()
+call now():
+2015-3-25
+```
+
+log() is a decorator and return a function wrapper().
+
+then call wrapeer() and return func(), which in this case is now()
+
+
+
+now() still exist, but the variable ...
+
+## Partial Function
+
+simplify the call process
+
+```Python
+def int2(x, base=2):
+    return int(x, base)
+  >>> int2('1000000')
+  64
+  >>> int2('1010101')
+  85  
+```
+
+```Python
+>>> import functools
+>>> int2 = functools.partial(int, base=2)
+>>> int2('1000000')
+64
+>>> int2('1010101')
+85
+```
